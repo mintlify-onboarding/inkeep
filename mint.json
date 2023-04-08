@@ -28,14 +28,9 @@
       "url": "api-reference"
     },
     {
-      "name": "Changelog",
-      "icon": "list",
-      "url": "https://mintlify.com"
-    },
-    {
-      "name": "Community",
-      "icon": "discord",
-      "url": "https://mintlify.com/community"
+      "name": "Learn More",
+      "icon": "magnifying-glass",
+      "url": "https://www.inkeep.com/"
     }
   ],
   "navigation": [
