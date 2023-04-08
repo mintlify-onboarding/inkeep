@@ -1,25 +1,25 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
-  "name": "Documentation Starter Kit",
+  "name": "inkeep",
   "logo": {
-    "dark": "/logo/dark.png",
-    "light": "/logo/light.png"
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
   },
   "favicon": "/favicon.png",
   "colors": {
-    "primary": "#0069ED",
-    "light": "#4D9CFF",
-    "dark": "#0050B4"
+    "primary": "#00BFEA",
+    "light": "#26D6FF",
+    "dark": "#282828",
+    "anchors": { "from": "#26D6FF", "to": "#00BFEA" }
   },
   "topbarLinks": [
     {
-      "name": "Documentation",
-      "url": "https://mintlify.com/docs"
+      "name": "See a demo",
+      "url": "https://calendly.com/d/zzb-qv9-n49/demo-w-inkeep?month=2023-04"
     }
   ],
   "topbarCtaButton": {
-    "name": "Get Started",
-    "url": "https://github.com/mintlify/starter"
+    "name": "Request earlly access",
+    "url": "https://inkeep.typeform.com/to/oJnqkTZI?typeform-source=www.inkeep.com"
   },
   "anchors": [
     {
@@ -58,8 +58,7 @@
     }
   ],
   "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "website": "https://www.inkeep.com/",
+    "linkedin": "https://www.linkedin.com/company/inkeep/"
   }
 }
