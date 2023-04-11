@@ -8,8 +8,11 @@
   "colors": {
     "primary": "#00BFEA",
     "light": "#26D6FF",
-    "dark": "#282828",
-    "anchors": { "from": "#26D6FF", "to": "#00BFEA" }
+    "dark": "#00BFEA",
+    "anchors": { "from": "#00BFEA", "to": "#26D6FF" },
+    "background": {
+      "dark": "#1F1F1F"
+    }
   },
   "topbarLinks": [
     {
