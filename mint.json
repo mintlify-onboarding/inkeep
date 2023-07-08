@@ -1,59 +1,97 @@
 {
-  "name": "inkeep",
+  "name": "Inkeep",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
   "favicon": "/favicon.png",
   "colors": {
-    "primary": "#00BFEA",
+    "primary": "#0088B2",
     "light": "#26D6FF",
-    "dark": "#00BFEA",
-    "anchors": { "from": "#00BFEA", "to": "#26D6FF" }
+    "dark": "#141D20",
+    "anchors": {
+      "from": "#0088B2",
+      "to": "#0088B2"
+    }
   },
   "topbarLinks": [
     {
-      "name": "See a demo",
-      "url": "https://calendly.com/d/zzb-qv9-n49/demo-w-inkeep?month=2023-04"
+      "name": "Get help",
+      "url": "mailto:support@inkeep.com?subject=Question%20regarding%20inkeep"
     }
   ],
   "topbarCtaButton": {
-    "name": "Request early access",
+    "name": "Start free trial",
     "url": "https://inkeep.typeform.com/to/oJnqkTZI?typeform-source=www.inkeep.com"
   },
   "anchors": [
     {
-      "name": "API Reference",
-      "icon": "rectangle-terminal",
-      "url": "api-reference"
+      "name": "Quick start",
+      "icon": "github",
+      "url": "https://github.com/inkeep/starter-template-inkeep-widgets"
     },
     {
-      "name": "Learn More",
-      "icon": "magnifying-glass",
-      "url": "https://www.inkeep.com/"
+      "name": "React package",
+      "icon": "npm",
+      "url": "https://www.npmjs.com/package/@inkeep/widgets"
+    },
+    {
+      "name": "API Playground",
+      "icon": "code",
+      "url": "https://api.inkeep.com/graphql"
+    },
+    {
+      "name": "Chat with us",
+      "icon": "envelope",
+      "url": "mailto:contact@inkeep.com?subject=Question%20regarding%20inkeep"
     }
   ],
   "navigation": [
     {
-      "group": "Home",
-      "pages": ["introduction", "features"]
-    },
-    {
-      "group": "API Documentation",
-      "pages": ["api-reference/authentication"]
-    },
-    {
-      "group": "Endpoint Examples",
+      "group": "Getting started",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
+        "getting-started/introduction",
+        "getting-started/why-inkeep"
+      ]
+    },
+    {
+      "group": "React components",
+      "pages": [
+        "react-components/search-bar",
+        "react-components/floating-chat-button",
+        "react-components/embedded-chat",
+        "react-components/custom-modal",
+        {
+          "group": "Shared Settings",
+          "pages": [
+            "react-components/shared-settings/base",
+            "react-components/shared-settings/search",
+            "react-components/shared-settings/ai-chat",
+            "react-components/shared-settings/modal"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Integration Guides",
+      "pages": [
+        "integrations/mintlify",
+        "integrations/nextjs",
+        "integrations/docusaurus"
+      ]
+    },    
+    {
+      "group": "API",
+      "pages": [
+        "api/graphql-playground",
+        "api/search",
+        "api/start-new-chat",
+        "api/continue-chat"
       ]
     }
   ],
   "footerSocials": {
-    "website": "https://www.inkeep.com/",
-    "linkedin": "https://www.linkedin.com/company/inkeep/"
+    "linkedin": "https://www.linkedin.com/company/inkeep/",
+    "twitter": "https://twitter.com/inkeep_ai"
   }
 }

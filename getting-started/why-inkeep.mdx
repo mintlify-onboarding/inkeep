@@ -1,0 +1,104 @@
+---
+title: "Why Inkeep"
+description: "Explore the benefits of using LLMs and our advanced search and chat experiences."
+---
+
+## Challanges of LLM-powered search and chat
+
+We've talked with many companies who are excited by the prospect of using large language models to power richer, more useful support and search experiences for their users. Many experiment with creating their own support bot, but run into challenges. This article discusses some of the current leading challenges and our approach to solving them.
+
+### Content from many different sources
+
+Content often lives in many places: documentation, forums, Slack and Discord communities, blogs, StackOverflow, and more. Ingesting all of this content, and keeping it up to date over time, quickly becomes the task of a team of data engineers.
+
+Inkeep addresses this by:
+
+- Automatically ingesting content from common public and private content sources with out-of-the-box integrations.
+
+- Re-crawling your sources to find differences and keep your knowledge base up to date.
+
+- Tailored crawling techniques for every source of content.
+
+### Poor content retrieval performance
+
+[Retrieval augmented generation (RAG)](https://arxiv.org/abs/2005.11401) (RAG) is the best way to use LLMs to answer questions regarding domain-specific content, but it relies on feeding the LLM a set of relevant documents for every user question. Vector search is a powerful tool to do this, but often comes up short when used alone. Often, the problem stems from embedding and chunking strategies that are
+
+Our search engine solves this by:
+
+- Custom embedding models and chunking strategies for specific content sources. The most effective strategy for a Slack conversation is very different from one for an API doc.
+
+- Doing hybrid search - a combination of vector and keyword search. This helps balance semantic similarity with exact string matching, which is particularly useful for shorter queries.
+
+- Fine-tunning the embedding space to your specific organization and content. Out-of-box embedding services like OpenAI's embedding don't account for what we call the "semantic space" of your company and your products. For example, "Data ingestion" is much closer in semantic meaning to "Feature" for Inkeep than for other companies.
+
+- Accounting for the time, source authority, product version, and other metadata about the content or your product.
+
+- ...and much more!
+
+If you'd like to learn more, join our newsletter where we share more about our search engine.
+
+### Providing delightful user experiences
+
+To maximize the likelihood that a user quickly resolves their issue, it's important to "meet them where they are".
+
+Our service provides out-of-box search and chat widgets that are accessible, responsive, and intuitive but still highly customizable to your brand. We also provide Slack and Discord bots you can add to your communities.
+
+If you want even greater control, you can use our chat APIs to build your own user-experiences or our search APIs to power your LLM app.
+
+### Feedback loops
+
+Even with a best-in-class search and RAG engine, feedback loops are the key to continuous improvement of model performance over time.
+
+Out platform has built-in mechanisms to automatically improve over time. This includes:
+
+- Thumbs up/down feedback from end-users
+- "Edit answer" feature for administrators
+- Custom FAQs
+
+We use the above to automatically improve the performance of our models over time.
+
+We also provide usage, topical, and sentiment analysis on all customer questions. Your product and content teams can use this to improve the product and content.
+
+### Production ready
+
+To launch something confidently to your customers, it's essential to have:
+
+- High availability, geo-distributed, low latency search and chat service
+
+- API and UX monitoring
+
+- Continuous evaluation of search and chat results
+
+The Inkeep platform automatically addresses all of the above, at scale, for many customers.
+
+## The Team
+
+Solving the challenges above and creating a powerful platform for search and chat wouldn't be possible without our team. We're all passionate machine learning, data engineering, and developer tools. Currently, this includes 5 MIT machine learning engineers and the amazing design and app development team.
+
+We're fortunate to have the backing of reputable investors including [Y Combinator](https://www.ycombinator.com/launches/IAP-inkeep-conversational-search-for-your-developer-product/edit) and [Khosla Ventures](https://www.khoslaventures.com/).
+
+Most importantly, we're trusted by over 100 developer-first companies.
+
+Our founding team includes:
+
+<AccordionGroup>
+  <Accordion title="Nick Gomez (Founder and CEO)" icon="user-vneck-hair">
+    [Nick](https://www.linkedin.com/in/edwinngomez/) studied Business Analytics & Computer Science at MIT. 
+    
+    He's a second-time founder and previously received a [patent](https://patents.justia.com/patent/11002555) for novel use of machine learning and data aggregation for a security platform. 
+    
+    He was later a leader in the developer experiences team for Microsoft’s identity and access management products, helping developers build and secure applications quickly. 
+    
+    Beyond Inkeep, Nick enjoys photography and hiking.
+  </Accordion>
+
+  <Accordion title="Robert Tran (Founder and CTO)" icon="user-hair">
+    [Robert](https://www.linkedin.com/in/robert-tran-profile/) studied Computer Science & Math at MIT with a focus on Artificial Intelligence and Machine Learning. 
+    
+    He has an extensive background in tech, including working with government, political organizations, financial firms, and logistics companies. 
+    
+    Previously, Robert was an early employee then Head of Engineering at [illumis](https://illumis.com) — building search and data pipelines on top of thousands of public data siloed sources. illumis was acquired by ComplySci. 
+    
+    Outside of Inkeep, Robert is passionate about film & writing.
+  </Accordion>
+</AccordionGroup>

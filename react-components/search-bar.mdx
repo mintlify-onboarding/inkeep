@@ -1,0 +1,30 @@
+---
+title: "Search Bar"
+description: "This component is used to display a search bar that triggers a modal with an AI chat or search."
+---
+
+<Snippet file="Quick StartReactComponent.mdx" />
+
+```typescript
+import { InkeepSearchBar, type InkeepSearchBarProps } from "@inkeep/widgets";
+
+const baseSettings: InkeepWidgetBaseSettings {
+    apiKey: process.env.REACT_APP_INKEEP_INTEGRATION_API_KEY,
+    integrationId: process.env.REACT_APP_INKEEP_INTEGRATION_ID || "",
+    organizationId: process.env.REACT_APP_INKEEP_ORGANIZATION_ID || "",
+    organizationDisplayName: "Inkeep",
+    primaryBrandColor: "#522FC9",
+  }
+
+const searchBarProps: InkeepSearchBarProps = {
+  baseSettings: {
+    ...baseSettings
+  },
+};
+
+export const SearchBar = () => {
+  return <InkeepSearchBar {...searchBarProps} />;
+};
+```
+
+<Snippet file="InkeepSearchBarProps.mdx" />

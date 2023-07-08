@@ -1,0 +1,47 @@
+## InkeepSearchSettings
+
+This interface is used to configure the search settings for the Inkeep widgets.
+
+All properties are optional.
+
+| Property                | Type                         | Description                                                        |
+| ----------------------- | ---------------------------- | ------------------------------------------------------------------ |
+| placeholder             | string                       | Placeholder text for the search input field.                       |
+| defaultQuery            | string                       | The default query that will appear in the search bar.              |
+| shouldOpenLinksInNewTab | boolean                      | Determines whether links should open in a new tab.                 |
+| searchFunctionsRef      | `React.Ref<SearchFunctions>` | Ref to the component's callable functions for search.              |
+| handleSearchQueryChange | (query: string) => void      | Callback for when the search query changes.                        |
+| isControlledSearchQuery | boolean                      | Determines whether the search query will be controlled externally. |
+| defaultBreadCrumbStyle  | BreadCrumbStyle              | Default style for breadcrumbs.                                     |
+| tabSettings             | InkeepTabSettings            | Settings for tabs in search results.                               |
+
+### InkeepTabSettings
+
+These settings control the tab behavior in search results.
+
+All properties are optional.
+
+| Property               | Type    | Description                                        |
+| ---------------------- | ------- | -------------------------------------------------- |
+| isAllTabEnabled        | boolean | Enables the 'All' tab in search results.           |
+| areRootBreadcrumbsTabs | boolean | Controls if root breadcrumbs are displayed as tabs |
+
+### Example
+
+```typescript
+import { InkeepSearchSettings } from "@inkeep/widgets";
+
+export const searchSettings: InkeepSearchSettings = {
+  placeholder: "Search for anything...",
+  defaultQuery: "",
+  shouldOpenLinksInNewTab: false,
+  searchFunctionsRef: undefined,
+  handleSearchQueryChange: undefined,
+  isControlledSearchQuery: false,
+  defaultBreadCrumbStyle: {},
+  tabSettings: {
+    isAllTabEnabled: true,
+    areRootBreadcrumbsTabs: false,
+  },
+};
+```

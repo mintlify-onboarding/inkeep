@@ -1,0 +1,38 @@
+## InkeepSearchBarProps
+
+This type is used to configure the search bar settings for the Inkeep widgets. It is a combination of `InkeepSearchBarSettings` and settings related to base widget, search, and AI chat.
+
+| Property       | Type                       | Description                                        |
+| -------------- | -------------------------- | -------------------------------------------------- |
+| baseSettings   | `InkeepWidgetBaseSettings` | **Required**. Base settings for any Inkeep widget. |
+| modalSettings  | `InkeepModalSettings`      | Settings for the modal.                            |
+| searchSettings | `InkeepSearchSettings`     | Additional search settings for the Inkeep widget.  |
+| aiChatSettings | `InkeepAIChatSettings`     | AI chat settings for the Inkeep widget.            |
+
+### Example
+
+```typescript
+import { InkeepSearchBarProps } from "@inkeep/widgets";
+
+const inkeepSearchBarProps: InkeepSearchBarProps = {
+    modalSettings: InkeepModalSettings {
+    //...
+    }
+    baseSettings: InkeepWidgetBaseSettings {
+    //...
+    },
+    searchSettings: InkeepSearchSettings {
+    //...
+    },
+    aiChatSettings: InkeepAIChatSettings {
+    //...
+    },
+
+};
+
+```
+
+<Snippet file="InkeepWidgetBaseSettings.mdx" />
+<Snippet file="InkeepModalSettings.mdx" />
+<Snippet file="InkeepSearchSettings.mdx" />
+<Snippet file="InkeepAIChatSettings.mdx" />

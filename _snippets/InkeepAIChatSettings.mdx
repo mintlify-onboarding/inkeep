@@ -1,0 +1,93 @@
+## InkeepAIChatSettings
+
+This interface is used to configure the settings related to the AI chat. It is used in any component that renders the AI chat.
+
+### Properties
+
+All are optional configurations.
+
+| Property                | Type                         | Description                                                      |
+| ----------------------- | ---------------------------- | ---------------------------------------------------------------- |
+| placeholder             | `string`                     | Placeholder text for the chat input.                             |
+| introMessage            | `string`                     | Introductory message in markdown format.                         |
+| botName                 | `string`                     | Name of the bot.                                                 |
+| botAvatarSrcUrl         | `string`                     | Source URL for the bot's avatar.                                 |
+| userAvatarSrcUrl        | `string`                     | Source URL for the user's avatar.                                |
+| shouldOpenLinksInNewTab | `boolean`                    | Determines whether links should open in a new tab.               |
+| isDisclaimerEnabled     | `boolean`                    | Determines whether to enable the disclaimer.                     |
+| disclaimerLabel         | `string`                     | Label for the disclaimer.                                        |
+| disclaimerTooltip       | `string`                     | Tooltip for the disclaimer.                                      |
+| switchToChatMessage     | `string`                     | Text for the button in the search bar.                           |
+| isChatSharingEnabled    | `boolean`                    | Determines if chat sharing is enabled.                           |
+| shareChatUrlBasePath    | `string`                     | Base path for shared chats.                                      |
+| defaultChatMode         | `ChatMode`                   | Default chat mode. Can be 'TURBO' or 'AUTO'. Default `AUTO`.     |
+| isChatModeToggleEnabled | `boolean`                    | Determines if chat mode toggle is enabled.                       |
+| turboModeLabel          | `string`                     | Label for turbo mode toggle when `defaultChatMode` is 'AUTO'.    |
+| turboModeTooltip        | `string`                     | Tooltip for turbo mode toggle when `defaultChatMode` is 'AUTO'.  |
+| einsteinModeLabel       | `string`                     | Label for turbo mode toggle when `defaultChatMode` is 'TURBO'.   |
+| einsteinModeTooltip     | `string`                     | Tooltip for turbo mode toggle when `defaultChatMode` is 'TURBO'. |
+| quickQuestionsLabel     | `string`                     | Header for suggested queries.                                    |
+| quickQuestions          | `string[]`                   | Suggested queries user can auto-submit.                          |
+| isControlledMessage     | `boolean`                    | Determines whether the message will be controlled externally.    |
+| handleMessageChange     | `(query: string) => void`    | Callback for when the input message changes.                     |
+| chatFunctionsRef        | `React.Ref<AIChatFunctions>` | Ref to the AIChat component's callable functions.                |
+
+### Example
+
+```typescript
+import { InkeepAIChatSettings } from "@inkeep/widgets";
+
+export const aiChatSettings: InkeepAIChatSettings = {
+  placeholder: "How do I get started?",
+  introMessage: "Hello! I'm here to help you. What do you want to know?",
+  botName: "Keepie",
+  botAvatarSrcUrl: "http://example.com/bot-avatar.png",
+  userAvatarSrcUrl: "http://example.com/user-avatar.png",
+  shouldOpenLinksInNewTab: true,
+  isDisclaimerEnabled: true,
+  disclaimerLabel: "Usage policy",
+  disclaimerTooltip: "Read our usage policy here",
+  switchToChatMessage: "Switch to Chat",
+  isChatSharingEnabled: false,
+  shareChatUrlBasePath: "/share/chat",
+  defaultChatMode: "AUTO",
+  isChatModeToggleEnabled: true,
+  turboModeLabel: "Turbo Mode",
+  turboModeTooltip:
+    "Turbo mode is fast and effective for less complex questions.",
+  einsteinModeLabel: "Einstein Mode",
+  einsteinModeTooltip:
+    "Einstein mode is great for complex questions, but can be slower.",
+  quickQuestionsLabel: "Popular Questions",
+  quickQuestions: [],
+  isControlledMessage: false,
+  handleMessageChange: undefined,
+  chatFunctionsRef: undefined,
+};
+```
+
+### ChatMode
+
+We currently offer two chat modes: "Einstein" and "Turbo" modes.
+
+|                        | Einstein Mode                                                                           | Turbo Mode                    |
+| ---------------------- | --------------------------------------------------------------------------------------- | ----------------------------- |
+| Conversation length    | Supports longer conversations                                                           | Standard                      |
+| Input size             | User questions can have greater amount of content                                       | Standard                      |
+| Sources considered     | More sources are considered when formulating an answer.                                 | Standard                      |
+| Intermediary LLM Steps | Additional chain of thought reasoning and other LLM techniques are used for Q&A         | Standard                      |
+| Models                 | Uses the best models available (e.g. GPT4). Better reasoning and instruction following. | Standard (e.g. GPT 3.5-turbo) |
+| Response speed         | Slower                                                                                  | Faster                        |
+| Cost                   | More expensive                                                                          | More affordable               |
+
+End-users can switch between these modes using the chat mode toggle button. The default chat mode can be configured using the `defaultChatMode` property.
+
+<Note>
+  Due to demand, `Einstein` mode is only available for select
+  plans. We typically recommend the `Einstein` mode if customer questions tend to require a lot of context or are highly complex in nature. `Turbo` mode is often sufficient for other use cases. Please get in touch at
+  [support@inkeep.com](mailto:support@inkeep.com?subject=Request%20for%20Einstein%20mode)
+  if you'd like to have it enabled for your organization. The `AUTO` value in the component configuration automatically applies Einstein mode if it is enabled for your organization.
+
+</Note>
+
+<Snippet file="AIChatFunctions.mdx" />

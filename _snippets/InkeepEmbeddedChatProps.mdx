@@ -1,0 +1,28 @@
+### InkeepEmbeddedChatProps
+
+This interface is used to configure the embedded chat settings for the Inkeep widgets.
+
+| Property             | Type                     | Description                                                                                              |
+| -------------------- | ------------------------ | -------------------------------------------------------------------------------------------------------- |
+| shouldAutoFocusInput | boolean                  | Determines whether to autofocus the chat input on load (only pertains to embedded chat). Default `true`. |
+| baseSettings         | InkeepWidgetBaseSettings | **Required**. Base settings for any Inkeep widget.                                                       |
+| aiChatSettings       | InkeepAIChatSettings     | **Required**. AI chat settings for the Inkeep widget.                                                    |
+
+#### Example
+
+```typescript
+import { InkeepEmbeddedChatProps } from "@inkeep/widgets";
+
+const inkeepEmbeddedChatProps: InkeepEmbeddedChatProps = {
+  shouldAutoFocusInput: true,
+  baseSettings: InkeepWidgetBaseSettings {
+    //...
+  },
+  aiChatSettings: InkeepAIChatSettings {
+    //...
+  },
+};
+```
+
+<Snippet file="InkeepWidgetBaseSettings.mdx" />
+<Snippet file="InkeepAIChatSettings.mdx" />

@@ -1,0 +1,38 @@
+---
+title: "Embedded Chat"
+description: "This component is used to embed an AI chat directly into your application or web page."
+---
+
+## Quick Start
+
+```typescript
+import {
+  InkeepEmbeddedChat,
+  type InkeepEmbeddedChatProps,
+} from "@inkeep/widgets";
+
+const inkeepEmbeddedChatProps: InkeepEmbeddedChatProps = {
+  baseSettings: {
+    apiKey: process.env.REACT_APP_INKEEP_INTEGRATION_API_KEY,
+    integrationId: process.env.REACT_APP_INKEEP_INTEGRATION_ID || "",
+    organizationId: process.env.REACT_APP_INKEEP_ORGANIZATION_ID || "",
+    organizationDisplayName: "Inkeep",
+    primaryBrandColor: "#522FC9",
+  },
+  aiChatSettings: {
+    // ...
+  },
+};
+
+export const EmbeddedChat = () => {
+  return (
+    <div>
+      <InkeepEmbeddedChat {...inkeepEmbeddedChatProps} />
+    </div>
+  );
+};
+```
+
+## Settings
+
+<Snippet file="InkeepEmbeddedChatProps.mdx" />

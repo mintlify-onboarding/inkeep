@@ -1,0 +1,39 @@
+### AIChatFunctions
+
+The `AIChatFunctions` interface provides a set of functions that can be used to programmatically interact with the AI chat. Once a ref is defined, the functions outlined below can be invoked programmatically based on your own business logic.
+
+| Method                      | Parameters          | Description                                                              |
+| --------------------------- | ------------------- | ------------------------------------------------------------------------ |
+| `submitCurrentInputMessage` | -                   | Submits the current message in the input field.                          |
+| `updateInputMessage`        | `(message: string)` | Updates the current message in the input field with the provided string. |
+| `submitNewMessage`          | `(message: string)` | Submits a new message directly, bypassing the input field.               |
+
+#### Example
+
+You can follow a similar pattern to the below to programmatically call any of the above methods. Keep in mind you should only call these methods once the ref is defined, which is why we are using `useEffect` in the below example.
+
+```typescript
+import React, { useEffect, useRef } from "react";
+import { InkeepEmbeddedChat, AIChatFunctions } from "@inkeep/widgets";
+import baseSettings from "./baseSettings"; // your base settings
+import aiChatSettings from "./aiChatSettings"; // your ai chat settings
+
+export const EmbeddedChat = () => {
+  const chatFunctionsRef = useRef<AIChatFunctions | null>(null);
+
+  useEffect(() => {
+    if (chatFunctionsRef.current) {
+      // Submit a new message when the chat ref is defined
+      chatFunctionsRef.current.submitNewMessage("How do I get started");
+    }
+  }, [chatFunctionsRef.current]);
+  return (
+    <div>
+      <InkeepEmbeddedChat
+        baseSettings={baseSettings}
+        aiChatSettings={{ ...aiChatSettings, chatFunctionsRef }} // Spread the ref into aiChatSettings
+      />
+    </div>
+  );
+};
+```

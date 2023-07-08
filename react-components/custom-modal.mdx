@@ -1,0 +1,49 @@
+---
+title: "Custom Trigger"
+description: "Design your own custom modal for a seamless integration with your application look and feel."
+---
+
+## Quick Start
+
+```typescript
+import React, { useState } from "react";
+import {
+  InkeepModal,
+  InkeepModalProps,
+  InkeepWidgetBaseSettings,
+} from "@inkeep/widgets";
+
+const baseSettings: InkeepWidgetBaseSettings = {
+  apiKey: process.env.REACT_APP_INKEEP_INTEGRATION_API_KEY || "",
+  integrationId: process.env.REACT_APP_INKEEP_INTEGRATION_ID || "",
+  organizationId: process.env.REACT_APP_INKEEP_ORGANIZATION_ID || "",
+  organizationDisplayName: "Inkeep",
+  primaryBrandColor: "#522FC9",
+};
+
+const InkeepModalComponent: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClose = useCallback(() => {
+    console.log("Modal closed");
+    setIsOpen(false);
+  }, []);
+
+  const inkeepModalProps: InkeepModalProps = {
+    isOpen,
+    onClose: handleClose,
+    baseSettings,
+  };
+
+  return (
+    <div>
+      <button onClick={() => setIsOpen(!isOpen)}>Toggle Modal</button>
+      <InkeepModal {...inkeepModalProps} />
+    </div>
+  );
+};
+
+export default InkeepModalComponent;
+```
+
+<Snippet file="InkeepModalProps.mdx" />

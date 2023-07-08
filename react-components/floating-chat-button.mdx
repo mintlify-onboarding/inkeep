@@ -1,0 +1,34 @@
+---
+title: "Floating Chat Button"
+description: "This component is used to display a floating button that triggers a modal with an AI chat or search."
+---
+
+## Quick Start
+
+```typescript
+import {
+  InkeepFloatingButton,
+  type InkeepFloatingButtonProps,
+} from "@inkeep/widgets";
+
+const baseSettings: InkeepWidgetBaseSettings {
+    apiKey: process.env.REACT_APP_INKEEP_INTEGRATION_API_KEY,
+    integrationId: process.env.REACT_APP_INKEEP_INTEGRATION_ID || "",
+    organizationId: process.env.REACT_APP_INKEEP_ORGANIZATION_ID || "",
+    organizationDisplayName: "Inkeep",
+    primaryBrandColor: "#522FC9",
+}
+
+const inkeepFloatingButtonProps: InkeepFloatingButtonProps = {
+  baseSettings: {
+    ...baseSettings
+  },
+  floatingButtonType: "ICON_TEXT_SHORTCUT",
+};
+
+export const FloatingButton = () => {
+  return <InkeepFloatingButton {...inkeepFloatingButtonProps} />;
+};
+```
+
+<Snippet file="InkeepFloatingButtonProps.mdx" />

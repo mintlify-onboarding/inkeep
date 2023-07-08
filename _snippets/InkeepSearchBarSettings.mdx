@@ -1,0 +1,17 @@
+## InkeepSearchBarSettings
+
+This interface is used to configure the search bar settings for the Inkeep widgets.
+
+| Property        | Type   | Required | Default | Description                         |
+| --------------- | ------ | -------- | ------- | ----------------------------------- |
+| openShortcutKey | string | No       | '/'     | Shortcut key for opening the modal. |
+
+### Example
+
+```typescript
+import { InkeepSearchBarSettings } from "@inkeep/widgets";
+
+const inkeepSearchBarSettings: InkeepSearchBarSettings = {
+  openShortcutKey: "/",
+};
+```

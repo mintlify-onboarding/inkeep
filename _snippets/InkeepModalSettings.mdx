@@ -1,0 +1,31 @@
+## InkeepModalSettings
+
+This interface is used to configure the modal settings for the Inkeep widgets.
+
+| Property               | Type                  | Description                                                                                                                                                                                             |
+| ---------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| defaultView            | `AI_CHAT` \| `SEARCH` | Default view for the modal. The default is `AI_CHAT` except for the `InkeepSearchBar` component.                                                                                                        |
+| isModeSwitchingEnabled | `boolean`             | Determines whether switching between search and chat in the modal is enabled. Default `true`.                                                                                                           |
+| openShortcutKey        | `string`              | Shortcut key for opening the modal. Default `'k'`.                                                                                                                                                      |
+| areOpenHotKeysDisabled | `boolean`             | Determines whether hotkeys for opening the modal are disabled. Default `false`.                                                                                                                         |
+| onShortcutKeyPressed   | `() => void `         | Callback for when the shortcut key is pressed. Default `undefined`.                                                                                                                                     |
+| isAlignedToTop         | `boolean`             | Determines whether the modal is aligned to the top. Default `true`.                                                                                                                                     |
+| isAlignedToRight       | `boolean`             | Determines whether the modal is aligned to the right. Default `false`.                                                                                                                                  |
+| closeOnBlur            | `boolean`             | Determines whether the modal should close when a user clicks outside of the modal. Default `true`. If `false`, the modal color overlay will be disabled and a user can interact with the underlying UX. |
+
+#### Example
+
+```typescript
+import { InkeepModalSettings } from "@inkeep/widgets";
+
+export const modalSettings: InkeepModalSettings = {
+  defaultView: "AI_CHAT",
+  isModeSwitchingEnabled: true,
+  openShortcutKey: "k",
+  areOpenHotKeysDisabled: false,
+  onShortcutKeyPressed: undefined,
+  isAlignedToTop: true,
+  isAlignedToRight: false,
+  closeOnBlur: true,
+};
+```

@@ -1,0 +1,59 @@
+## InkeepWidgetBaseSettings
+
+This interface is used to configure the base settings for the Inkeep widgets.
+
+| Property                   | Type                                   | Description                                                                                                                                                                                             |
+| -------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| apiKey                     | `string`                               | **Required**. The API key for your integration. Example: `process.env.REACT_APP_INKEEP_API_KEY`                                                                                                         |
+| integrationId              | `string`                               | **Required**. The identifier for the integration point. Example: `process.env.REACT_APP_INKEEP_INTEGRATION_ID`                                                                                          |
+| organizationId             | `string`                               | **Required**. The identifier for your organization. Example: `process.env.REACT_APP_INKEEP_ORGANIZATION_ID`                                                                                             |
+| organizationDisplayName    | `string`                               | **Required**. The display name for your organization. Example: `"Inkeep"`                                                                                                                               |
+| primaryBrandColor          | `string`                               | **Required**. The primary brand color. The UX will automatically derive a theme from this color. Example: `"#522FC9"`                                                                                   |
+| theme                      | `UserTheme`                            | The custom theme for the widget. Refer to [theme.mdx](theme.mdx) for details.                                                                                                                           |
+| product                    | `string`                               | Name of the product. Example: `"Inkeep AI Chat"`                                                                                                                                                        |
+| productVersion             | `string`                               | Version of the product. Example: `"1.0.0"`                                                                                                                                                              |
+| userId                     | `string`                               | User ID for analytics. Example: `"631d3067-d3a8-4e53-a5f1-4bc272c762c7"`                                                                                                                                |
+| userEmail                  | `string`                               | User email for analytics. Example: `"john@mydomain.com"`                                                                                                                                                |
+| userName                   | `string`                               | User name for analytics and showing initials in the UX. Example: `"John Doe"`                                                                                                                           |
+| userCohorts                | `string[]`                             | Array of user cohorts to correlate to your own customer segmentation in analytics. Example: `["group1", "group2"]`                                                                                      |
+| logEventCallback           | `(event: InkeepCallbackEvent) => void` | Callback function for logging events to integrate with your own analytics. Refer to [InkeepCallbackEvent.mdx](InkeepCallbackEvent.mdx) for details.                                                     |
+| optOutAnalyticalCookies    | `boolean`                              | Option to disable cookies used for tracking a user's inkeep usage behavior. Example: `false`                                                                                                            |
+| optOutAllAnalytics         | `boolean`                              | Option to disable all usage analytics, even anonymous ones. Example: `false`                                                                                                                            |
+| optOutFunctionalCookies    | `boolean`                              | Option to disable cookies that are used for functionality. Example: `false`                                                                                                                             |
+| remoteErrorLoggingLevel    | `RemoteErrorLoggingLevel`              | The level of remote error logging for Inkeep's monitoring service. Example: `RemoteErrorLoggingLevel.AnonymousErrors`                                                                                   |
+| consoleDebugLevel          | `ConsoleDebugLevel`                    | The level of logging to your console. Example: `ConsoleDebugLevel.Errors`                                                                                                                               |
+| apiProxyDomain             | `string`                               | Domain for routing search and chat API calls through a proxy. Example: `"proxy_domain"`                                                                                                                 |
+| isInkeepMentionEnabled     | `boolean`                              | Option to enable or disable Inkeep branding. Please note that this is only availble for the `Enterprise` tier. See the terms of use for specifics. Default: `true`                                      |
+| inkeepMentionDecoratorText | `string`                               | Text for Inkeep mention decorator. Default: `"Provided by "`                                                                                                                                            |
+| breadcrumbRules            | `BreadCrumbRules`                      | Specify the rules for how to display breadcrumbs. Refer to [BreadCrumbRules.mdx](BreadCrumbRules.mdx) for details.                                                                                      |
+| customCardSettings         | `CustomCardSettings[]`                 | By default, there is an 'All' tab, a tab for all 'DocumentationRecords', and one for "Discourse", "StackOverflow", and "GitHub". Refer to [CustomCardSettings.mdx](CustomCardSettings.mdx) for details. |
+| recordTitleSettings        | `RecordTitleSettings`                  | Settings for record title. Refer to [RecordTitleSettings.mdx](RecordTitleSettings.mdx) for details.                                                                                                     |
+| environment                | `"development"` \| `"production"`      | Set to 'development' to use the dev environment. Default is `production`.                                                                                                                               |
+
+### Example
+
+```typescript
+import { type InkeepWidgetBaseSettings } from "@inkeep/widgets";
+
+const baseSettings: InkeepWidgetBaseSettings = {
+  apiKey: process.env.REACT_APP_INKEEP_INTEGRATION_API_KEY,
+  integrationId: process.env.REACT_APP_INKEEP_INTEGRATION_ID,
+  organizationId: process.env.REACT_APP_INKEEP_ORGANIZATION_ID,
+  organizationDisplayName: "Inkeep",
+  primaryBrandColor: "#522FC9",
+  product: "Inkeep Product",
+  productVersion: "1.0.0",
+  userId: "user_id",
+  userEmail: "user@example.com",
+  userName: "John Doe",
+  userCohorts: ["cohort1", "cohort2"],
+  optOutAnalyticalCookies: false,
+  optOutAllAnalytics: false,
+  optOutFunctionalCookies: false,
+  remoteErrorLoggingLevel: RemoteErrorLoggingLevel.AnonymousErrors,
+  consoleDebugLevel: ConsoleDebugLevel.Errors,
+  searchAndChatServiceProxyDomain: "proxy_domain",
+  isInkeepMentionEnabled: true,
+  inkeepMentionDecoratorText: "Provided by ",
+};
+```

@@ -1,0 +1,44 @@
+## InkeepModalProps
+
+This interface is used to configure the modal settings for the Inkeep widgets.
+
+| Property       | Type                       | Description                                                           |
+| -------------- | -------------------------- | --------------------------------------------------------------------- |
+| isOpen         | boolean                    | **Required**. Determines whether the modal is open.                   |
+| onClose        | `() => void `              | **Required**. Callback for when the modal is closed.                  |
+| onOpen         | `() => void `              | Callback for when the modal is opened. Default `undefined`.           |
+| baseSettings   | `InkeepWidgetBaseSettings` | **Required**. Base settings for any Inkeep widget.                    |
+| modalSettings  | `InkeepModalSettings`      | Settings for the modal. Default `undefined`.                          |
+| searchSettings | `InkeepSearchSettings`     | Additional search settings for the Inkeep widget. Default `undfined`. |
+| aiChatSettings | `InkeepAIChatSettings`     | AI chat settings for the Inkeep widget. Default `undefined`.          |
+
+#### Example
+
+```typescript
+import type { InkeepModalProps, InkeepModalSettings, InkeepWidgetBaseSettings, InkeepSearchSettings, InkeepAIChatSettings } from "@inkeep/widgets";
+
+//TOD: add controlled modal example logic
+
+const modalSettings: InkeepModalProps = {
+    isOpen: false,
+    onClose: undefined,
+    onOpen: undefined,
+    baseSettings: InkeepWidgetBaseSettings {
+        //...
+    },
+    modalSettings: InkeepModalSettings {
+        //...
+    }
+    searchSettings: InkeepSearchSettings {
+        //...
+    },
+    aiChatSettings: InkeepAIChatSettings {
+        //...
+    },
+};
+```
+
+<Snippet file="InkeepModalSettings.mdx" />
+<Snippet file="InkeepWidgetBaseSettings.mdx" />
+<Snippet file="InkeepSearchSettings.mdx" />
+<Snippet file="InkeepAIChatSettings.mdx" />

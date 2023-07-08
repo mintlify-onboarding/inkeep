@@ -1,0 +1,21 @@
+### SearchFunctions
+
+The `SearchFunctions` interface provides a set of functions that can be used to programmatically interact with the search input.
+
+All are optional configurations.
+
+| Method              | Parameters        | Description                                        |
+| ------------------- | ----------------- | -------------------------------------------------- |
+| `updateSearchQuery` | `(query: string)` | Updates the search query with the provided string. |
+
+#### Example
+
+```typescript
+import { useRef } from "react";
+import { SearchFunctions } from "@inkeep/widgets";
+
+const searchFunctionsRef = useRef<SearchFunctions | null>(null);
+
+// Update the search query
+searchFunctionsRef.current?.updateSearchQuery("How do I get started?");
+```

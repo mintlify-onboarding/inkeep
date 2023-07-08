@@ -1,0 +1,57 @@
+## InkeepFloatingButtonProps
+
+This interface is used to configure the floating button settings for the Inkeep widgets.
+
+### Properties
+
+All properties are optional.
+
+| Property             | Type                       | Description                                                                                                 |
+| -------------------- | -------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| floatingButtonType   | `FloatingButtonTypes`      | Type of the floating button. Can be `ICON_TEXT_SHORTCUT`, `ICON_TEXT`, or `ICON`. Default value `ICON_TEXT` |
+| isPositionFixed      | `boolean`                  | Determines whether the position of the floating button is fixed. Default value `true`                       |
+| fixedPositionXOffset | `string`                   | X offset for the fixed position of the floating button. Default value `1.5rem`                              |
+| fixedPositionYOffset | `string`                   | Y offset for the fixed position of the floating button. Default value `1.5rem`.                             |
+| baseSettings         | `InkeepWidgetBaseSettings` | **Required**. Base settings for any Inkeep widget.                                                          |
+| modalSettings        | `InkeepModalSettings`      | Settings for the modal.                                                                                     |
+| searchSettings       | `InkeepSearchSettings`     | Additional search settings for the Inkeep widget.                                                           |
+| aiChatSettings       | `InkeepAIChatSettings`     | AI chat settings for the Inkeep widget.                                                                     |
+
+#### FloatingButtonTypes
+
+There are three variations of the floating button. The default is `ICON_TEXT`.
+
+![Floating button types](/images/floating-buttons-type-options.png)
+
+#### Example
+
+```typescript
+import {
+  InkeepFloatingButtonSettings,
+  InkeepFloatingButtonModalSettings,
+} from "@inkeep/widgets";
+
+const inkeepFloatingButtonSettings: InkeepFloatingButtonSettings = {
+  isPositionFixed: true,
+  fixedPositionXOffset: "1.5rem",
+  fixedPositionYOffset: "1.5rem",
+  floatingButtonType: "ICON_TEXT",
+  baseSettings: {
+    //...
+  },
+  modalSettings: {
+    //...
+  },
+  searchSettings: {
+    //...
+  },
+  aiChatSettings: {
+    //...
+  },
+};
+```
+
+<Snippet file="InkeepWidgetBaseSettings.mdx" />
+<Snippet file="InkeepModalSettings.mdx" />
+<Snippet file="InkeepSearchSettings.mdx" />
+<Snippet file="InkeepAIChatSettings.mdx" />
